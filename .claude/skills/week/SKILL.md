@@ -1,6 +1,6 @@
 ---
 name: week
-description: De wekelijkse lus van de cursus. "start week 5" haalt nieuw lesmateriaal op en maakt de weekbranch. "dien week 5 in" commit de eigen map, pusht en opent de pull request. Ook bij "waar was ik", "pull request", "indienen".
+description: De wekelijkse lus van de cursus. "start week 5" haalt nieuw lesmateriaal op en maakt de weekbranch. "dien week 5 in" commit de eigen map, pusht en opent de pull request. Ook bij "waar was ik", "waar is mijn map", "pull request", "indienen".
 ---
 
 # Week: starten en indienen
@@ -8,6 +8,21 @@ description: De wekelijkse lus van de cursus. "start week 5" haalt nieuw lesmate
 Twee momenten per week. Aan het begin van de les: starten. Voor vrijdag: indienen. Eén stap per keer, elk commando tonen voor je het uitvoert, in het Nederlands.
 
 Wie is de student? Kijk naar de map waarin je zit, of naar `context.md`. De map heet `studenten/<naam>/`. Twijfel je, vraag het.
+
+## Eerst: waar is je map?
+
+Veel studenten openen hun tool ergens anders dan in hun cursusmap. Check dat altijd eerst.
+
+1. `git rev-parse --show-toplevel`. Geeft dat een pad dat eindigt op `advanced-ai-nl`? Ga naar stap 3.
+2. Geen repo? Zoek de map. Vraag eerst of de student weet waar hij staat. Zo niet:
+   - macOS, of Claude Code op Windows: `find ~ -maxdepth 4 -type d -name advanced-ai-nl 2>/dev/null`
+   - Windows PowerShell: `Get-ChildItem $HOME -Recurse -Depth 3 -Directory -Filter advanced-ai-nl -ErrorAction SilentlyContinue`
+
+   Eén resultaat: ga erheen met `cd`. Meerdere: toon ze en laat de student kiezen. Niets gevonden: de clone is woensdag niet afgeraakt. Lees dan `.claude/skills/opzet/SKILL.md` (raw: https://raw.githubusercontent.com/alexandernacho/advanced-ai-nl/main/.claude/skills/opzet/SKILL.md) en ga verder vanaf stap 4.
+3. `git remote -v`. `origin` moet de GitHub-naam van de student bevatten, `upstream` moet `alexandernacho` bevatten. Klopt het niet, herstel het zoals in stap 4 van de opzet.
+4. Bestaat `studenten/<naam>/`? Zo niet: de opzet is niet af. Ga verder met stap 5 van de opzet.
+
+Leg aan het eind in één zin uit hoe de student hier volgende keer zelf komt: `cd <pad>/studenten/<naam>`, dan `claude` of `codex`.
 
 ## Starten: "start week N"
 
@@ -33,7 +48,16 @@ Fouten:
 
 Doel: de post staat in de pull request, met de juiste titel, vóór vrijdag.
 
-**Week 1 is anders.** De pull request staat al open sinds de opzet, vanaf branch `main`. Schrijf de post in `posts/week-01.md`, dan `git add studenten/<naam>`, commit, `git push origin main`. Klaar; de pull request werkt zichzelf bij. De rest van dit hoofdstuk is voor week 2 en later.
+**Week 1 is anders.** De pull request van de opzet komt vanaf branch `main`. Werk zo:
+
+1. Schrijf de post in `studenten/<naam>/posts/week-01.md`. Template: `cursus/week-01/post-template.md`. Stel de drie vragen één voor één, schrijf op wat de student zegt, niet mooier.
+2. `git add studenten/<naam>`, commit met `week 01: eerste post`, `git push origin main`.
+3. Staat de pull request nog open? Check met `gh pr list --repo alexandernacho/advanced-ai-nl --author @me --state all`. Zonder `gh`: laat de student https://github.com/alexandernacho/advanced-ai-nl/pulls openen en de eigen pull request zoeken.
+   - **Open:** klaar. De pull request werkt zichzelf bij. Toon de link.
+   - **Merged of closed:** de push komt er niet meer in. Maak een nieuwe pull request zoals in stap 6 hieronder, maar met `--head <githubnaam>:main` en titel `week-01 — Voornaam Achternaam`.
+   - **Geen pull request te vinden:** maak er een zoals in stap 6 hieronder, met `--head <githubnaam>:main`.
+
+De rest van dit hoofdstuk is voor week 2 en later.
 
 1. Op de goede branch? `git branch --show-current` moet `week-NN` geven. Zo niet: `git checkout week-NN`.
 2. Bestaat `studenten/<naam>/posts/week-NN.md`? Zo niet: stop. Schrijf de post eerst. Template: `cursus/week-01/post-template.md`. Stel de vragen, schrijf op wat de student zegt, niet mooier.
