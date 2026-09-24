@@ -73,7 +73,7 @@ Open je tool in je map en plak:
 Lees https://raw.githubusercontent.com/alexandernacho/advanced-ai-nl/main/.claude/skills/week/SKILL.md. Ik wil week 1 indienen. Eén stap per keer, in het Nederlands.
 ```
 
-Weet je niet meer waar je map staat? Start je tool waar je bent en plak dezelfde regel. Je AI zoekt je map en toont je de weg terug. Daarna start je opnieuw, in je map.
+**Lukt dat niet?** Geen Terminal-icoon in je Dock, geen "Openen in Terminal", of je vindt je map niet? Open een terminal zoals woensdag. Mac: Cmd+Spatie, typ `Terminal`, Enter. Windows: Start-knop, typ `Terminal`, Enter. Start je tool en plak dezelfde regel. Je AI zoekt je map en geeft je het commando om er te geraken.
 
 ## Tegen woensdag 30 september
 
