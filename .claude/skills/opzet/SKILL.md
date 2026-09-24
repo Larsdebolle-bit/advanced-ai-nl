@@ -120,4 +120,6 @@ Zeg wat er nu staat: eigen map, contextbestand, open pull request.
 Laatste instructie: voortaan open je je tool **in je eigen map**. Dan leest hij `context.md` vanzelf, elke keer. Toon het volledige pad van `studenten/<naam>/` en leer de student de weg, zonder `cd`:
 1. Map zoeken in Finder (macOS) of Verkenner (Windows) en pinnen: naar de zijbalk slepen (macOS), of rechtsklik → "Aan Snelle toegang vastmaken" (Windows).
 2. Terminal openen in die map: map op het Terminal-icoon in het Dock slepen (macOS), of rechtsklik → "Openen in Terminal" (Windows 11).
-3. `claude` of `codex` typen. Volgende week begint met `git pull upstream main`.
+3. `claude` of `codex` typen.
+
+Zeg er meteen bij: Vraagt Claude "Allow external CLAUDE.md file imports?" Kies **Yes, allow external imports**. Dat is `AGENTS.md`, het regelbestand van de cursus in de hoofdmap. Claude vraagt het één keer. Kiest de student "No", dan leest Claude de cursusregels niet. Volgende week begint met `git pull upstream main`.

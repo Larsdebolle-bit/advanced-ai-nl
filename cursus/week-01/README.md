@@ -59,6 +59,8 @@ Start je tool altijd in je eigen map, `studenten/jouw-naam/`. Alleen daar leest 
 2. Open daar een terminal. macOS: sleep de map op het Terminal-icoon in het Dock. Windows 11: rechtsklik op de map → "Openen in Terminal".
 3. Typ `claude` of `codex`.
 
+Vraagt Claude "Allow external CLAUDE.md file imports?" Kies **Yes, allow external imports**. Dat is `AGENTS.md`, het regelbestand van de cursus in de hoofdmap. Claude vraagt het één keer.
+
 Geen `cd` nodig.
 
 ## Je eerste post

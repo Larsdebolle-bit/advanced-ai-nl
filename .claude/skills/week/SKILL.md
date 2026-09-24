@@ -28,8 +28,10 @@ De regel van de cursus: de student start de tool in de eigen map, `studenten/<na
    > claude
    > ```
    > Plak daarna dezelfde regel opnieuw.
+   >
+   > Vraagt Claude "Allow external CLAUDE.md file imports?" Kies **Yes, allow external imports**. Dat is `AGENTS.md`, het regelbestand van de cursus in de hoofdmap. Claude vraagt het één keer.
 
-   Gebruikt de student Codex? Dan `codex` in plaats van `claude`. Windows met een map op een andere schijf (bv. `D:`) in cmd: `cd /d "<pad>"`.
+   Gebruikt de student Codex? Dan `codex` in plaats van `claude`, en de zin over Claude valt weg. Windows met een map op een andere schijf (bv. `D:`) in cmd: `cd /d "<pad>"`.
 
    Voeg één zin toe voor volgende keer: "Pin deze map in Finder (sleep naar de zijbalk) of Verkenner (rechtsklik → Aan Snelle toegang vastmaken). Volgende keer: rechtsklik op de map → Openen in Terminal."
 
