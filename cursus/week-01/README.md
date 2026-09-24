@@ -16,7 +16,7 @@ Onderweg leer je git. Je AI legt het uit terwijl je het doet. Ik heb het destijd
 - Je eigen kopie van deze cursus op GitHub, met jouw map erin.
 - `context.md`: het bestand dat je AI elke sessie leest.
 - Een richting voor dertien weken.
-- Een eerste post, ingediend tegen vrijdag.
+- Een eerste post, ingediend tegen dinsdag 29 september.
 
 ## Verloop
 
@@ -51,12 +51,30 @@ Je werkt in duo's. Klaar? Help je buur. Zelfde fout bij drie mensen? Dan komt hi
 
 Om 12:20 stoppen we, waar je ook staat. Wat niet af is, doe je thuis. Fork en clone moeten wel af zijn, anders zie je volgende week niets.
 
+## Je tool openen, vanaf nu
+
+Start je tool altijd in je eigen map, `studenten/jouw-naam/`. Alleen daar leest hij `context.md`.
+
+1. Zoek je map in Finder (macOS) of Verkenner (Windows). Pin hem: sleep hem naar de zijbalk (macOS) of rechtsklik → "Aan Snelle toegang vastmaken" (Windows).
+2. Open daar een terminal. macOS: sleep de map op het Terminal-icoon in het Dock. Windows 11: rechtsklik op de map → "Openen in Terminal".
+3. Typ `claude` of `codex`.
+
+Geen `cd` nodig.
+
 ## Je eerste post
 
-Drie vragen, een halve pagina. Template: `post-template.md`. Zeg tegen je tool: `dien week 1 in`. Je pull request van de opzet staat al open; de post komt erbij. Deze week telt de inhoud niet. De pijplijn wel: schrijven, pushen, pull request, merge. Beter dat die nu breekt dan in week 4.
+Drie vragen, een halve pagina. Template: `post-template.md`. Deze week telt de inhoud niet. De pijplijn wel: schrijven, pushen, pull request. Beter dat die nu breekt dan in week 4.
+
+Open je tool in je map en plak:
+
+```
+Lees https://raw.githubusercontent.com/alexandernacho/advanced-ai-nl/main/.claude/skills/week/SKILL.md. Ik wil week 1 indienen. Eén stap per keer, in het Nederlands.
+```
+
+Weet je niet meer waar je map staat? Start je tool waar je bent en plak dezelfde regel. Je AI zoekt je map en toont je de weg terug. Daarna start je opnieuw, in je map.
 
 ## Tegen woensdag 30 september
 
 1. Opzet af.
-2. Post plus pull request, tegen vrijdag 25 september.
+2. Post plus pull request, tegen dinsdag 29 september, 23:59.
 3. Lees `cursus/beoordeling/build-brief.md` met je AI. Vraag het om drie ideeën voor wat jij kan bouwen. Breng ze mee.

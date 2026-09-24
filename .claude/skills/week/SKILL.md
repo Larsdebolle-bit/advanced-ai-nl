@@ -11,24 +11,34 @@ Wie is de student? Kijk naar de map waarin je zit, of naar `context.md`. De map 
 
 ## Eerst: waar is je map?
 
-Veel studenten openen hun tool ergens anders dan in hun cursusmap. Check dat altijd eerst.
+De regel van de cursus: de student start de tool in de eigen map, `studenten/<naam>/`. Alleen daar leest de tool `context.md`, en alleen daar mag hij schrijven. Check dat altijd eerst.
 
-1. `git rev-parse --show-toplevel`. Geeft dat een pad dat eindigt op `advanced-ai-nl`? Ga naar stap 3.
-2. Geen repo? Zoek de map. Vraag eerst of de student weet waar hij staat. Zo niet:
-   - macOS, of Claude Code op Windows: `find ~ -maxdepth 4 -type d -name advanced-ai-nl 2>/dev/null`
-   - Windows PowerShell: `Get-ChildItem $HOME -Recurse -Depth 3 -Directory -Filter advanced-ai-nl -ErrorAction SilentlyContinue`
+1. Staat er `context.md` in de map waar je zit, en eindigt `git rev-parse --show-toplevel` op `advanced-ai-nl`? Dan zit je goed. Ga naar stap 4.
+2. Zit je in de repo, maar niet in `studenten/<naam>/` (bijvoorbeeld in de hoofdmap)? Zoek de map van de student in `studenten/` en ga naar stap 3.
+   Zit je niet in de repo? Zoek de map:
+   - macOS, of Claude Code op Windows: `find ~ -maxdepth 5 -type d -path "*advanced-ai-nl/studenten/*" -not -name "_voorbeeld" 2>/dev/null`
+   - Windows PowerShell: `Get-ChildItem $HOME -Recurse -Depth 4 -Directory -Filter advanced-ai-nl -ErrorAction SilentlyContinue`, dan `studenten/` erin bekijken.
 
-   Eén resultaat: ga erheen met `cd`. Meerdere: toon ze en laat de student kiezen. Niets gevonden: de clone is woensdag niet afgeraakt. Lees dan `.claude/skills/opzet/SKILL.md` (raw: https://raw.githubusercontent.com/alexandernacho/advanced-ai-nl/main/.claude/skills/opzet/SKILL.md) en ga verder vanaf stap 4.
-3. `git remote -v`. `origin` moet de GitHub-naam van de student bevatten, `upstream` moet `alexandernacho` bevatten. Klopt het niet, herstel het zoals in stap 4 van de opzet.
-4. Bestaat `studenten/<naam>/`? Zo niet: de opzet is niet af. Ga verder met stap 5 van de opzet.
+   Meerdere resultaten: toon ze en laat de student kiezen. Niets gevonden: de clone is woensdag niet afgeraakt. Lees dan `.claude/skills/opzet/SKILL.md` (raw: https://raw.githubusercontent.com/alexandernacho/advanced-ai-nl/main/.claude/skills/opzet/SKILL.md) en ga verder vanaf stap 4. Bestaat `studenten/<naam>/` nog niet: ga verder vanaf stap 5 van de opzet.
+3. Gevonden? **Ga er niet zelf heen en werk niet verder vanaf hier.** Stuur de student terug naar de regel:
+   - Toon het volledige pad van `studenten/<naam>/`.
+   - Leg uit hoe de student de map vindt: open Finder (macOS) of Verkenner (Windows) en ga naar dat pad.
+   - Pin de map, zodat hij volgende week één klik ver staat. macOS: sleep de map naar de zijbalk van Finder. Windows: rechtsklik → "Aan Snelle toegang vastmaken".
+   - Open daar een terminal. macOS: sleep de map op het Terminal-icoon in het Dock. Windows 11: rechtsklik op de map → "Openen in Terminal". Windows 10: Shift + rechtsklik → "PowerShell-venster hier openen".
+   - In die nieuwe terminal: `claude` of `codex`, en dezelfde regel opnieuw plakken.
 
-Leg aan het eind in één zin uit hoe de student hier volgende keer zelf komt: `cd <pad>/studenten/<naam>`, dan `claude` of `codex`.
+   Stop hier. Dit gesprek is klaar.
+4. Je zit in `studenten/<naam>/`. `git remote -v`: `origin` moet de GitHub-naam van de student bevatten, `upstream` moet `alexandernacho` bevatten. Klopt het niet, herstel het zoals in stap 4 van de opzet. Ga dan verder met wat de student vroeg.
+
+**Paden hieronder staan vanaf de hoofdmap van de repo.** Jij zit in `studenten/<naam>/`, twee niveaus dieper. Ga niet naar de hoofdmap met `cd`: sommige tools laten dat niet toe. Vertaal zo:
+- Bestanden: `studenten/<naam>/posts/week-01.md` wordt `posts/week-01.md`. `cursus/week-01/...` wordt `../../cursus/week-01/...`.
+- Git: zet `-C ../..` na `git`. `git add studenten/<naam>` wordt `git -C ../.. add studenten/<naam>`.
 
 ## Starten: "start week N"
 
 Doel: de nieuwste cursusbestanden binnen, en een schone branch voor deze week.
 
-1. Ga naar de hoofdmap van de repo (`git rev-parse --show-toplevel`).
+1. Alle git-commando's in dit deel met `-C ../..`, zoals hierboven.
 2. Check `git status`. Staan er niet-gecommitte wijzigingen in `studenten/<naam>/`? Commit ze eerst op de huidige branch: `git add studenten/<naam>` en een korte boodschap. Wijzigingen buiten de eigen map: toon ze, en gooi ze weg met `git checkout -- <bestand>`. Vraag eerst.
 3. Haal het lesmateriaal op:
    ```
