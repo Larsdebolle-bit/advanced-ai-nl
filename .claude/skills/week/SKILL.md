@@ -20,12 +20,18 @@ De regel van de cursus: de student start de tool in de eigen map, `studenten/<na
    - Windows PowerShell: `Get-ChildItem $HOME -Recurse -Depth 4 -Directory -Filter advanced-ai-nl -ErrorAction SilentlyContinue`, dan `studenten/` erin bekijken.
 
    Meerdere resultaten: toon ze en laat de student kiezen. Niets gevonden: de clone is woensdag niet afgeraakt. Lees dan `.claude/skills/opzet/SKILL.md` (raw: https://raw.githubusercontent.com/alexandernacho/advanced-ai-nl/main/.claude/skills/opzet/SKILL.md) en ga verder vanaf stap 4. Bestaat `studenten/<naam>/` nog niet: ga verder vanaf stap 5 van de opzet.
-3. Gevonden? **Ga er niet zelf heen en werk niet verder vanaf hier.** Stuur de student terug naar de regel:
-   - Toon het volledige pad van `studenten/<naam>/`.
-   - Leg uit hoe de student de map vindt: open Finder (macOS) of Verkenner (Windows) en ga naar dat pad.
-   - Pin de map, zodat hij volgende week één klik ver staat. macOS: sleep de map naar de zijbalk van Finder. Windows: rechtsklik → "Aan Snelle toegang vastmaken".
-   - Open daar een terminal. macOS: sleep de map op het Terminal-icoon in het Dock. Windows 11: rechtsklik op de map → "Openen in Terminal". Windows 10: Shift + rechtsklik → "PowerShell-venster hier openen".
-   - In die nieuwe terminal: `claude` of `codex`, en dezelfde regel opnieuw plakken.
+3. Gevonden? **Ga er niet zelf heen en werk niet verder vanaf hier.** Stuur de student terug naar de regel. Toon dit, met het echte pad ingevuld en tussen aanhalingstekens (paden met spaties breken anders):
+
+   > Je map staat hier. Sluit deze sessie (`/exit`, of twee keer Ctrl+C) en plak dan:
+   > ```
+   > cd "<volledig pad naar studenten/<naam>>"
+   > claude
+   > ```
+   > Plak daarna dezelfde regel opnieuw.
+
+   Gebruikt de student Codex? Dan `codex` in plaats van `claude`. Windows met een map op een andere schijf (bv. `D:`) in cmd: `cd /d "<pad>"`.
+
+   Voeg één zin toe voor volgende keer: "Pin deze map in Finder (sleep naar de zijbalk) of Verkenner (rechtsklik → Aan Snelle toegang vastmaken). Volgende keer: rechtsklik op de map → Openen in Terminal."
 
    Stop hier. Dit gesprek is klaar.
 4. Je zit in `studenten/<naam>/`. `git remote -v`: `origin` moet de GitHub-naam van de student bevatten, `upstream` moet `alexandernacho` bevatten. Klopt het niet, herstel het zoals in stap 4 van de opzet. Ga dan verder met wat de student vroeg.
