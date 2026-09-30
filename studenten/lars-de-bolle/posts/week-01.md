@@ -1,4 +1,4 @@
-# Week 1 — Claude Code kende ik al, GitHub niet
+# Week 1: Claude Code kende ik al, GitHub niet
 
 ## Wat heb ik tot nu toe met AI gedaan?
 
@@ -9,7 +9,7 @@ voor Holiways. Alles met Claude Code in de terminal, niet met een browserchat.
 ## Wat verraste me vandaag?
 
 Woensdag was ik niet in de les: mijn lessenrooster was nog niet in orde. Ik heb
-de opzet vandaag ingehaald — account, fork, clone, eigen map.
+de opzet vandaag ingehaald: account, fork, clone, eigen map.
 
 Wat me opvalt: leuk dat we zulke dingen nu met school leren, met Claude Code en
 GitHub. Met Claude Code werkte ik al heel veel, met GitHub minder. Ik liet Claude
