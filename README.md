@@ -26,7 +26,7 @@ De repo is publiek. Wat je erin zet, kan iedereen lezen. Dat is geen bijwerking,
 
 ## Elke week
 
-Twee zinnen tegen je AI-tool, in je eigen map: `start week 5` aan het begin van de les, `dien week 5 in` vóór vrijdag. De skill `week` doet dan dit:
+Twee zinnen tegen je AI-tool, in je eigen map: `start week 5` aan het begin van de les, `dien week 5 in` vóór dinsdag 23:59. De skill `week` doet dan dit:
 
 ```bash
 git checkout main

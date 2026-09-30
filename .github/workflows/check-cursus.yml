@@ -3,7 +3,7 @@ name: Controle cursus
 on:
   push:
     branches: [main]
-    paths: ["cursus/**", "scripts/check-cursus.mjs"]
+    paths: ["cursus/**", "scripts/**", ".claude/skills/**", ".agents/skills/**"]
 
 permissions:
   contents: read
@@ -17,3 +17,4 @@ jobs:
         with:
           node-version: 22
       - run: node scripts/check-cursus.mjs
+      - run: node scripts/sync-skills.mjs --check

@@ -16,7 +16,7 @@ Onderweg leer je git. Je AI legt het uit terwijl je het doet. Ik heb het destijd
 - Je eigen kopie van deze cursus op GitHub, met jouw map erin.
 - `context.md`: het bestand dat je AI elke sessie leest.
 - Een richting voor dertien weken.
-- Een eerste post, ingediend tegen dinsdag 29 september.
+- Een eerste post, ingediend tegen vrijdag 2 oktober.
 
 ## Verloop
 
@@ -78,5 +78,5 @@ Lees https://raw.githubusercontent.com/alexandernacho/advanced-ai-nl/main/.claud
 ## Tegen woensdag 30 september
 
 1. Opzet af.
-2. Post plus pull request, tegen dinsdag 29 september, 23:59.
+2. Post plus pull request, tegen vrijdag 2 oktober, 23:59.
 3. Lees `cursus/beoordeling/build-brief.md` met je AI. Vraag het om drie ideeën voor wat jij kan bouwen. Breng ze mee.

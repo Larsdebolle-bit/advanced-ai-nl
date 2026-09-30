@@ -6,7 +6,7 @@ De wekelijkse post is je building journal. Elke week: wat je deze week met je to
 
 ## Hoe
 
-Post in `studenten/jouw-naam/posts/week-NN.md`. Push naar je fork. Pull request, titel `week-NN — Voornaam Achternaam`. Deadline: vrijdag na de les.
+Post in `studenten/jouw-naam/posts/week-NN.md`. Push naar je fork. Pull request, titel `week-NN — Voornaam Achternaam`. Deadline: dinsdag 23:59, vóór de volgende les. Uitzondering: week 1, vrijdag 2 oktober, 23:59.
 
 Eén klasgenoot reageert in de pull request met drie regels: één ding dat duidelijk is, één bewering zonder cijfer, één zin die van een machine lijkt te komen. Dan merge ik.
 
