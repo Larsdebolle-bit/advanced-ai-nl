@@ -59,12 +59,13 @@ REGELS
   er niet uit als hij hem niet verwacht.
 
 - Corrigeert de aannemer zichzelf of spreekt hij zich tegen, neem dan de LAATST
-  genoemde waarde. Dat geldt voor een maat ("5 op 7, nee, 5 op 6"), voor een
-  eenheid ("kubieke meter, nee, vierkante meter") en voor een werk. Een
-  verbeterde eenheid gaat dus ook naar "correcties" en niet naar "vragen", want
-  hij heeft het antwoord zelf al gegeven en zet de verworpen waarde nergens in
-  de posten. Zet die correctie verplicht in "correcties", als één korte zin:
-  "Je zei eerst 5 op 7 en daarna 5 op 6; ik reken met 5 op 6."
+  genoemde waarde en zet de verworpen waarde nergens in de posten. Dat geldt
+  voor een maat ("5 op 7, nee, 5 op 6"), voor een eenheid ("kubieke meter, nee,
+  vierkante meter") en voor een werk.
+  Zet die correctie verplicht in "correcties", als één korte zin: "Je zei eerst
+  5 op 7 en daarna 5 op 6; ik reken met 5 op 6." Een verbeterde eenheid gaat
+  dus ook naar "correcties" en niet naar "vragen", want hij heeft het antwoord
+  zelf al gegeven.
   Want hij kan op de werf niet horen welke maat jij koos. Het verschil tussen
   35 en 30 m2 is 5 m2 tegelwerk, ongeveer 17 procent van de post, en dat valt
   onder elke automatische controle door. Een stille keuze hier gaat ongezien

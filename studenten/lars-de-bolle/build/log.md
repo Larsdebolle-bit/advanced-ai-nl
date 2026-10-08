@@ -2,6 +2,63 @@
 
 Wat ik veranderde, en wat ermee gebeurde. Nieuwste bovenaan.
 
+## Week 3, run 1: 5 op 5, en waarom dat een slecht resultaat is
+
+**5 op 5 juist (n = 5, 1 run).** Nul fouten in alle zes klassen. Gedraaid op
+T01, T05, T07, T08 en T10, elk in een leeg venster met alleen de prompt en één
+input.
+
+Dat is geen bewijs dat v2 werkt. Het betekent dat deze vijf inputs te makkelijk
+zijn, en de les zegt het letterlijk: haal je alles, dan is je testset te
+makkelijk. Drie redenen waarom dit cijfer weinig waard is:
+
+1. **n = 5 en één run.** F6, wisselend antwoord bij dezelfde input, kan ik bij
+   één run per definitie niet zien. Precies de klasse die bij een taalmodel het
+   meest voorkomt.
+2. **Elke input test één ding.** T01 een verspreking, T05 een dubbelzinnigheid,
+   T07 een hoeveelheid, T10 een eenheid. Een echte werfopname duurt twee minuten
+   en bevat vijf werken, drie maten en twee versprekingen door elkaar. Daar gaat
+   het mis, niet op een zin van tien woorden.
+3. **De prompt is op deze inputs geschreven.** Ik heb hem tussen de audit en de
+   buurtest acht keer bijgesteld, en elke bijstelling kwam uit precies deze
+   gevallen. Dan meet ik of ik mijn eigen regels goed opschreef, niet of de tool
+   werkt.
+
+**Wat ik er wel uit leerde, en dat is het echte resultaat.**
+
+T08 ging fout, maar niet bij het model: bij mij. Ik verwachtte Sloopwerk
+badkamer aan 12 uur (750 euro) en het model nam Tegels uitbreken aan 12 m2 (264
+euro). Het model volgde mijn drempelregel correct: in "casser le carrelage dans
+la salle de bain" zijn de tegels het object en is de badkamer alleen de plaats,
+dus één los onderdeel. Mijn antwoord was nog van voor die regel bestond, en ik
+had na die wijziging alleen T03 nagekeken en T08 niet.
+
+Dat is de klassieke valkuil van een testset: je past je prompt aan en vergeet
+dat daarmee je verwachte antwoorden verschuiven. Het verschil was hier een
+factor drie in euro.
+
+T01 stelde een vraag die ik niet verwachtte, over of één container genoeg is. Ik
+reken dat juist, want de prompt zegt dat het moet vragen wat het niet weet, en
+hoeveel puin uit 30 m2 komt staat er niet in. Maar mijn beoordelingsregel zei
+niet of een extra vraag mag. Dat gat zat in mijn testset, niet in de prompt.
+
+**Wat er nu moet gebeuren, voor week 4.**
+
+Niet: de vijf resterende inputs draaien en hopen op fouten. Die zijn van hetzelfde
+kaliber. Wel:
+
+1. Twee lange, rommelige opnames bijschrijven: twee minuten spraak, meerdere
+   werken, twee maten die botsen, één woord dat Whisper verkeerd hoort. Dat is
+   de echte input en die heb ik nog niet getest.
+2. Elke input een tweede keer draaien om F6 te kunnen zien.
+3. De verwachte antwoorden opnieuw nakijken tegen de huidige prompt, want er
+   zijn acht regels bijgekomen sinds ik ze schreef.
+
+**De voorraadvalkuil sloeg niet toe.** T07 had 90 m plinten kunnen overnemen en
+nam 0. T05 had 48 m2 kunnen pakken en maakte geen post. De kandidaat-wijziging
+hieronder blijft dus in de la liggen, en dat is de goede uitkomst: ik hoef die
+zin niet te schrijven.
+
 ## Week 3, de buurtest
 
 Geen les, dus geen echte buur. In de plaats daarvan een los agentje dat alleen
