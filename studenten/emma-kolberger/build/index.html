@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="nl">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Productmarge-analist</title>
+<style>
+body{font:16px system-ui;background:#f4f6fa;color:#18283a;margin:0}main{max-width:1100px;margin:45px auto;padding:24px}section{background:white;padding:24px;border-radius:14px;margin:20px 0}h1{font-size:32px}label{display:block;margin:16px 0}input,textarea,button{font:inherit;padding:10px;border:1px solid #aab6c5;border-radius:6px}textarea{width:100%;box-sizing:border-box;min-height:150px}button{background:#164d72;color:white;cursor:pointer;margin-right:10px}table{width:100%;border-collapse:collapse;font-size:14px}th,td{text-align:left;padding:12px;border-bottom:1px solid #ddd}.scroll{overflow:auto}.error{color:#9d2020}small{color:#536273}#results:empty{display:none}
+</style>
+<main>
+<h1>Productmarge-analist</h1>
+<p>Ontdek producten onder je brutomargedoel en onderzoek concrete verbeteringen.</p>
+<section>
+<p>Gebruik één periode en één valuta. Bedragen in euro, exclusief btw; verkoopprijzen na korting en directe kosten per stuk. Je gegevens blijven in deze browser.</p>
+<label>Doelbrutomarge (%) <input id="target" type="number" min="0" max="99.99" step="0.01" value="30"></label>
+<label>Upload CSV <input id="file" type="file" accept=".csv,text/csv"></label>
+<label>Of plak je CSV <textarea id="csv" spellcheck="false" placeholder="Gebruik de kolommen uit het voorbeeldbestand."></textarea></label>
+<button id="example">Laad voorbeeld</button><button id="analyze">Analyseer</button>
+<p><a href="voorbeeld.csv" download>Download voorbeeldbestand</a></p>
+<p id="error" class="error" role="alert"></p>
+</section>
+<section id="results" aria-live="polite"></section>
+<small>De analyse beoordeelt brutomarges. Scenario’s tonen geen gegarandeerde besparing of nettowinst.</small>
+</main>
+<script src="src/csv.js"></script>
+<script src="src/analyses/productmarges.js"></script>
+<script src="src/app.js"></script>
+</html>

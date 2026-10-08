@@ -1,0 +1,16 @@
+const assert = require('node:assert/strict');
+const { analyze } = require('../src/analyses/productmarges.js');
+const { parse } = require('../src/csv.js');
+const fs = require('node:fs');
+const rows = parse(fs.readFileSync(require('node:path').join(__dirname, '../voorbeeld.csv'), 'utf8'));
+const [a, b, c] = analyze(rows, 30);
+assert.equal(a.revenue, 5000); assert.equal(a.profit, 1000); assert.equal(a.margin, 20); assert.equal(a.gap, 500); assert.equal(a.targetCost, 35);
+assert.equal(a.status, 'Onder doel'); assert.equal(b.status, 'Voldoet aan doel'); assert.equal(b.gap, 0);
+assert.equal(c.revenue, 600); assert.equal(c.margin, null); assert.equal(c.status, 'Onvoldoende data');
+assert.equal(analyze([{ ...rows[0], directe_kost_per_stuk: '35' }], 30)[0].status, 'Voldoet aan doel');
+for (const value of ['', '-1', 'abc', 'Infinity']) assert.equal(analyze([{ ...rows[0], directe_kost_per_stuk: value }], 30)[0].status, 'Onvoldoende data');
+assert.equal(analyze([{ ...rows[0], aantal_verkocht: '0' }], 30)[0].status, 'Onvoldoende data');
+assert.throws(() => analyze(rows, 100));
+assert.equal(parse('product;aantal_verkocht;nettoverkoopprijs_per_stuk;directe_kost_per_stuk\n"Tas; blauw";10;50,5;40')[0].product, 'Tas; blauw');
+assert.throws(() => parse('product,aantal_verkocht\nA,2'));
+console.log('Alle analyse- en CSV-controles geslaagd.');
