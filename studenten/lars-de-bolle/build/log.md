@@ -2,6 +2,42 @@
 
 Wat ik veranderde, en wat ermee gebeurde. Nieuwste bovenaan.
 
+## Week 3, de buurtest
+
+Geen les, dus geen echte buur. In de plaats daarvan een los agentje dat alleen
+`prompt.md` te zien kreeg: niet mijn taak, niet mijn testset, niet mijn
+antwoorden. Drie inputs: T05, T07 en T10, de drie waar een mens anders kan
+beslissen dan ik.
+
+**Uitkomst: alle drie dezelfde antwoorden als de mijne.** Dat is niet het
+interessante deel. Het interessante deel is waarover het moest gokken om daar te
+komen, en dat waren zes tegenspraken, zes regels die niet toepasbaar waren en
+zes dubbelzinnige formuleringen.
+
+Wat ik daarop veranderde:
+
+| Bevinding | Wat er ontbrak | Fix |
+|---|---|---|
+| "Schat op Belgische richtprijzen" | er stond geen enkele richtprijs in de prompt | zeventien richtprijzen toegevoegd, met de instructie het midden te nemen |
+| forfait komt op nul uit | "aantal blijft de genoemde hoeveelheid", en bij een forfait noemt niemand er een | bij forfait is het aantal altijd 1 |
+| "5 op 5 meter" naar 25 m2 | nergens stond dat het model maten moet uitrekenen | twee maten is m2, drie maten is m3 |
+| tegels wand of vloer tegen bron open | twee regels claimden dezelfde input, geen rangorde | de plaatsregel gaat voor op "open" |
+| verbeterde eenheid | de correctieregel ging alleen over maten | geldt nu ook voor een eenheid en een werk |
+| "Plinten" wordt "Plinten plaatsen" | botste met "verzin geen werken" | een post uit de eigen bibliotheek overnemen is geen verzinnen |
+| "grotere werken" splitsen | geen grens, dus nooit toepasbaar zonder gok | regel geschrapt |
+| Tegels uitbreken m2 tegen 1 uur per m2 | twee prijzen voor hetzelfde werk | hele ruimte is uren, een of twee losse onderdelen is de lijstpost |
+
+Die laatste vroeg een drempel, anders is "hele ruimte" zelf een gok: de ruimte
+genoemd, of drie of meer onderdelen ervan. Daarmee blijft T03 in uren, want
+tegels plus douche plus bad is een badkamer strippen.
+
+Wat dit zegt over de audit: ik had drie gaten gevonden door de zes bouwstenen af
+te lopen. De buurtest vond er acht meer, en geen enkele daarvan is een
+ontbrekende bouwsteen. Het zijn regels die onderling niet kloppen. Een checklist
+vindt wat er niet staat; een lezer vindt wat er niet samen kan.
+
+Nog niet gefixt, bewust: de voorraadkolom. Zie hieronder.
+
 ## Week 3, v2: zes bouwstenen compleet
 
 **Wat ontbrak.** De audit (`audit.md`) legde drie gaten bloot in v1: geen enkel
