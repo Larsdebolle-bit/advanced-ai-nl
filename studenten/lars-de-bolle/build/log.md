@@ -24,6 +24,18 @@ dubbelzinnige maat (bouwsteen 5).
 `correcties`. T04 moet een lege postenlijst geven met een regel in `onzeker`.
 T02, T03 en T05 verwacht ik ongewijzigd correct.
 
+**Bewust niet in v2 gezet: de kandidaat-wijziging.** De materialenlijst heeft
+een kolom `voorraad` (vloertegels 48, chape 120, plinten 90) en nergens in de
+prompt staat wat die kolom betekent. Dat is opzet. Neemt het model die voorraad
+over als `aantal`, dan weet ik dat het mijn bibliotheek als hoeveelheidslijst
+leest in plaats van als prijslijst, en dat is een fout die in productie een
+offerte van 90 meter plinten maakt waar de klant er 12 nodig heeft.
+
+Gaat T05 of T07 daarop onderuit, dan is dit mijn ene wijziging: één zin onder de
+lijst dat de voorraad over het magazijn gaat en niet over deze offerte. Ik zet
+die zin er nu niet in, want dan test ik of het model een regel kan volgen in
+plaats van of het de lijst begrijpt.
+
 **Resultaat.** Nog niet gedraaid. Run 1 staat hieronder zodra de vijf inputs
 door v2 zijn gegaan.
 
