@@ -1,65 +1,114 @@
 # Log
 
-Wat ik veranderde, en wat ermee gebeurde. Nieuwste bovenaan.
+Wat ik veranderde en wat ermee gebeurde. Nieuwste bovenaan.
 
-## Week 3, run 1: 5 op 5, en waarom dat een slecht resultaat is
+## Versies van de prompt
 
-**5 op 5 juist (n = 5, 1 run).** Nul fouten in alle zes klassen. Gedraaid op
-T01, T05, T07, T08 en T10, elk in een leeg venster met alleen de prompt en één
-input.
+| Versie | Bestand | Wat erin veranderde |
+|---|---|---|
+| v1 | `prompt-v1.md` | week 2, zes regels zonder waarom, geen voorbeelden |
+| v2 | niet bewaard | audit: zes bouwstenen compleet, drie voorbeelden, elke regel een want |
+| v2b | `prompt-v2.md` | buurtest: acht regelconflicten opgelost, plus de keuze van de sloopwerkpost |
+| v3 | `prompt.md` | de ene wijziging na run 1 en 2 |
 
-Dat is geen bewijs dat v2 werkt. Het betekent dat deze vijf inputs te makkelijk
-zijn, en de les zegt het letterlijk: haal je alles, dan is je testset te
-makkelijk. Drie redenen waarom dit cijfer weinig waard is:
+**Een onzuiverheid die ik moet melden.** De eerste vijf runs van run 1 (T01, T05,
+T07, T08, T10) liepen op v2 zonder de regel die zegt welke sloopwerkpost je
+kiest. De andere negentien runs liepen op v2b, met die regel. Voor T01 en T08
+had dat verschil kunnen uitmaken, want daar gaat het precies om sloopwerk. In
+beide gevallen gaven run 1 en run 2 hetzelfde antwoord, dus vermoedelijk
+veranderde de regel daar niets. Maar vermoedelijk is geen bewijs, en formeel is
+dat voor die twee geen zuivere n = 2.
 
-1. **n = 5 en één run.** F6, wisselend antwoord bij dezelfde input, kan ik bij
-   één run per definitie niet zien. Precies de klasse die bij een taalmodel het
-   meest voorkomt.
-2. **Elke input test één ding.** T01 een verspreking, T05 een dubbelzinnigheid,
-   T07 een hoeveelheid, T10 een eenheid. Een echte werfopname duurt twee minuten
-   en bevat vijf werken, drie maten en twee versprekingen door elkaar. Daar gaat
-   het mis, niet op een zin van tien woorden.
-3. **De prompt is op deze inputs geschreven.** Ik heb hem tussen de audit en de
-   buurtest acht keer bijgesteld, en elke bijstelling kwam uit precies deze
-   gevallen. Dan meet ik of ik mijn eigen regels goed opschreef, niet of de tool
-   werkt.
+## De ene wijziging: 2 op 2 juist, en de fout is weg
 
-**Wat ik er wel uit leerde, en dat is het echte resultaat.**
+**De fout.** T02 ("Ik moet een ruimte schilderen en nadien de belichting
+regelen") gaf in beide runs een tweede post: "Elektriciteit lichtpunt plaatsen",
+stuk, aantal 0, 415 euro, bron geschat. Die post had niet mogen bestaan. De
+plaatsregel zegt dat je bij twijfel over wat een werk precies is geen post maakt
+maar een vraag stelt, en van "de belichting regelen" weet je niet of het een
+punt, een armatuur of een hele kring is.
 
-T08 ging fout, maar niet bij het model: bij mij. Ik verwachtte Sloopwerk
-badkamer aan 12 uur (750 euro) en het model nam Tegels uitbreken aan 12 m2 (264
-euro). Het model volgde mijn drempelregel correct: in "casser le carrelage dans
-la salle de bain" zijn de tegels het object en is de badkamer alleen de plaats,
-dus één los onderdeel. Mijn antwoord was nog van voor die regel bestond, en ik
-had na die wijziging alleen T03 nagekeken en T08 niet.
+**Welke bouwsteen fout was.** Geen van de zes. Het was een botsing tussen een
+regel (bouwsteen 2) en de richtprijzenlijst die ik na de buurtest had
+toegevoegd. Die lijst bevat "Elektriciteit per punt: 280 tot 550". Het model
+vond daar een prijs, en een prijs hebben voelde als toestemming om een post te
+maken.
 
-Dat is de klassieke valkuil van een testset: je past je prompt aan en vergeet
-dat daarmee je verwachte antwoorden verschuiven. Het verschil was hier een
-factor drie in euro.
+Dat is het pijnlijke deel: die richtprijzenlijst was zelf een fix uit de
+buurtest. Een fix die een nieuwe fout maakt. Daarom is het belangrijk dat je na
+elke wijziging opnieuw meet, en niet alleen de inputs die eerst fout gingen.
 
-T01 stelde een vraag die ik niet verwachtte, over of één container genoeg is. Ik
-reken dat juist, want de prompt zegt dat het moet vragen wat het niet weet, en
-hoeveel puin uit 30 m2 komt staat er niet in. Maar mijn beoordelingsregel zei
-niet of een extra vraag mag. Dat gat zat in mijn testset, niet in de prompt.
+**Wat ik veranderde.** Eén alinea onder de richtprijzen, niet in de regels:
 
-**Wat er nu moet gebeuren, voor week 4.**
+> Dat je hier een prijs vindt, is geen reden om een post te maken. Eerst beslis
+> je of de post mag bestaan, dan pas zoek je de prijs.
 
-Niet: de vijf resterende inputs draaien en hopen op fouten. Die zijn van hetzelfde
-kaliber. Wel:
+Met het waarom erbij: een prijs uit die lijst in een post die niet had mogen
+bestaan, is een bedrag dat de aannemer niet verwacht en niet terugvindt.
 
-1. Twee lange, rommelige opnames bijschrijven: twee minuten spraak, meerdere
-   werken, twee maten die botsen, één woord dat Whisper verkeerd hoort. Dat is
-   de echte input en die heb ik nog niet getest.
-2. Elke input een tweede keer draaien om F6 te kunnen zien.
-3. De verwachte antwoorden opnieuw nakijken tegen de huidige prompt, want er
-   zijn acht regels bijgekomen sinds ik ze schreef.
+**Resultaat.** T02 twee keer opnieuw gedraaid op v3, beide keren juist: één post
+schilderwerk, geen lichtpuntpost, en als tweede vraag precies de goede, namelijk
+of de belichting over een punt, een armatuur of een hele kring gaat.
 
-**De voorraadvalkuil sloeg niet toe.** T07 had 90 m plinten kunnen overnemen en
-nam 0. T05 had 48 m2 kunnen pakken en maakte geen post. De kandidaat-wijziging
-hieronder blijft dus in de la liggen, en dat is de goede uitkomst: ik hoef die
-zin niet te schrijven.
+**Waarom dat nog geen bewijs is.** Twee runs op één input. En de andere elf
+inputs zijn niet opnieuw gedraaid op v3, dus ik mag niet zeggen dat de tool nu
+24 op 24 haalt. Ik weet alleen dat de ene fout die ik vond, weg is, en dat de
+wijziging niets kapotmaakte in de input waar ze op gericht was.
 
-## Week 3, de buurtest
+## Run 1 en 2: 22 op 24 juist (n = 12, 2 runs)
+
+| Klasse | Aantal | Waar |
+|---|---|---|
+| F1 fout | 0 | |
+| F2 verzonnen | 2 | T02, dezelfde post in beide runs |
+| F3 gemist | 0 | |
+| F4 vorm | 0 | |
+| F5 geweigerd | 0 | |
+| F6 wisselend | 2 | T01 en T03, alleen in de vragen |
+
+**Het patroon in F6 is het interessantste van de hele meting.** De posten waren
+in alle twaalf inputs bij beide runs identiek: zelfde omschrijvingen, zelfde
+aantallen, zelfde eenheden, zelfde bronlabels. Het aantal vragen wisselde wel.
+T01 stelde in run 1 een vraag over de container en in run 2 geen enkele. T03
+stelde twee vragen in run 1 en drie in run 2, alle drie over dezelfde onbekende.
+
+Dat betekent dat de harde uitvoer stabiel is en de zachte niet. Voor een offerte
+is dat de goede kant op: een bedrag dat wisselt is erger dan een vraag die
+wisselt. Maar het is wel een echt probleem, want mijn eigen prompt zegt dat vier
+vragen die hij al beantwoord heeft, hij vanaf dan allemaal wegklikt. Een vraag
+die soms wel en soms niet komt, is een vraag waar hij niet op kan vertrouwen.
+
+**Wat dit cijfer waard is.** Meer dan de 5 op 5 van eerder vandaag, want n is nu
+12 met twee runs, de lastige inputs zitten erbij, en er zijn twee opnames bij
+die echt op spraak lijken. Maar nog steeds beperkt: twee runs is weinig om F6 te
+kwantificeren, en de prompt is op deze inputs geschreven.
+
+**Twee dingen die mijn testset zelf fout had.**
+
+T08. Ik verwachtte Sloopwerk badkamer aan 12 uur, 750 euro. Het model nam Tegels
+uitbreken aan 12 m2, 264 euro, en volgde daarmee correct de regel die ik zelf
+net had toegevoegd: in "casser le carrelage dans la salle de bain" zijn de tegels
+het object en is de badkamer alleen de plaats. Mijn antwoord was van voor die
+regel bestond. Factor drie in euro.
+
+De les: je past je prompt aan en je verwachte antwoorden verschuiven mee, maar je
+kijkt ze niet opnieuw na. Daarom staat de versietabel nu bovenaan dit bestand.
+
+T01. Het stelde een vraag die ik niet verwachtte, over of één container genoeg
+is. Mijn beoordelingsregel zei niet of een extra vraag mag. Nu wel: een extra
+vraag over een echte onbekende is juist, een vraag over iets dat in de opname
+staat is fout.
+
+**Hoe de runs liepen.** Elk in een eigen leeg venster, alleen de prompt en één
+input, geen web search, geen enkel ander bestand in zicht. Niet in deze map, want
+hier wordt `context.md` meegelezen.
+
+Afwijking van de opdracht: dit liep op Claude en niet op GPT-4o in de OpMaat-app,
+en de buurtest was een los agentje en geen mens. Het testdoel (ziet het model
+alleen de prompt en één input) klopt wel, maar dit is geen meting van de echte
+keten.
+
+## De buurtest
 
 Geen les, dus geen echte buur. In de plaats daarvan een los agentje dat alleen
 `prompt.md` te zien kreeg: niet mijn taak, niet mijn testset, niet mijn
@@ -68,10 +117,8 @@ beslissen dan ik.
 
 **Uitkomst: alle drie dezelfde antwoorden als de mijne.** Dat is niet het
 interessante deel. Het interessante deel is waarover het moest gokken om daar te
-komen, en dat waren zes tegenspraken, zes regels die niet toepasbaar waren en
-zes dubbelzinnige formuleringen.
-
-Wat ik daarop veranderde:
+komen: zes tegenspraken, zes regels die niet toepasbaar waren en zes
+dubbelzinnige formuleringen.
 
 | Bevinding | Wat er ontbrak | Fix |
 |---|---|---|
@@ -85,62 +132,48 @@ Wat ik daarop veranderde:
 | Tegels uitbreken m2 tegen 1 uur per m2 | twee prijzen voor hetzelfde werk | hele ruimte is uren, een of twee losse onderdelen is de lijstpost |
 
 Die laatste vroeg een drempel, anders is "hele ruimte" zelf een gok: de ruimte
-genoemd, of drie of meer onderdelen ervan. Daarmee blijft T03 in uren, want
-tegels plus douche plus bad is een badkamer strippen.
+genoemd, of drie of meer onderdelen ervan. En toen bleek dat de lijst alleen
+"Sloopwerk badkamer" heeft, dus voor elke andere ruimte geen post: daar is
+"Werkuren algemeen" de terugval geworden.
 
 Wat dit zegt over de audit: ik had drie gaten gevonden door de zes bouwstenen af
 te lopen. De buurtest vond er acht meer, en geen enkele daarvan is een
 ontbrekende bouwsteen. Het zijn regels die onderling niet kloppen. Een checklist
 vindt wat er niet staat; een lezer vindt wat er niet samen kan.
 
-Nog niet gefixt, bewust: de voorraadkolom. Zie hieronder.
-
-## Week 3, v2: zes bouwstenen compleet
+## v2: zes bouwstenen compleet
 
 **Wat ontbrak.** De audit (`audit.md`) legde drie gaten bloot in v1: geen enkel
 voorbeeld (bouwsteen 4), geen enkele regel met een waarom (bouwsteen 2), en een
 uitweg die alleen een ontbrekende prijs dekte en niet een tegenstrijdige of
 dubbelzinnige maat (bouwsteen 5).
 
-**Wat ik veranderde.** Eén wijziging per bouwsteen, niet meer:
-
 | Bouwsteen | Wijziging |
 |---|---|
 | 1 | Rol uitgebreid: de aannemer leest op de werf na, dus een stille keuze gaat mee naar de klant. |
 | 2 | Elke regel een want. De correctieregel vermeldt nu dat 5 m2 ongeveer 17 procent is en onder elke automatische controle doorvalt. |
-| 3 | Twee velden bij: `correcties` en `onzeker`. |
-| 4 | Drie voorbeelden: normale opname met maat, werk zonder maat, opname zonder inhoud. Bewust geen van mijn testinputs, want dan test ik het model op zijn eigen voorbeelden. |
-| 5 | Expliciete uitweg: niet weten mag, en hoort in `onzeker`. |
+| 3 | Twee velden bij: `correcties` en `vragen`. |
+| 4 | Drie voorbeelden: normale opname met maten, werk zonder maat, opname zonder inhoud. Bewust geen van mijn testinputs, want dan test ik het model op zijn eigen voorbeelden. |
+| 5 | `vragen` in plaats van een vage onzekerheidsmelding: één zin, tutoyerend, zo concreet dat de aannemer er met één getal op kan antwoorden. |
 | 6 | Onveranderd, stond al goed. |
 
-**Verwachting, voor ik draai.** T01 moet nu 30 m2 geven plus een regel in
-`correcties`. T04 moet een lege postenlijst geven met een regel in `onzeker`.
-T02, T03 en T05 verwacht ik ongewijzigd correct.
+**Vijf regels die in mijn hoofd zaten en nergens anders.** Tijdens het invullen
+van de verwachte antwoorden bleek vijf keer dat mijn antwoord iets eiste dat
+nergens in mijn prompt stond: de verhouding 1 uur per m2 voor sloopwerk, dat een
+container er altijd bij hoort, dat bron over de prijs gaat en niet over het
+aantal, dat er geen minimum aantal posten is, en wanneer het model mag afleiden
+en wanneer niet. Dat is wat de les bedoelt met: jouw regels zitten in jouw hoofd
+tot je ze opschrijft.
 
-**Bewust niet in v2 gezet: de kandidaat-wijziging.** De materialenlijst heeft
-een kolom `voorraad` (vloertegels 48, chape 120, plinten 90) en nergens in de
-prompt staat wat die kolom betekent. Dat is opzet. Neemt het model die voorraad
-over als `aantal`, dan weet ik dat het mijn bibliotheek als hoeveelheidslijst
-leest in plaats van als prijslijst, en dat is een fout die in productie een
-offerte van 90 meter plinten maakt waar de klant er 12 nodig heeft.
+**De voorraadvalkuil.** De materialenlijst heeft een kolom `voorraad`
+(vloertegels 48, chape 120, plinten 90) en nergens in de prompt staat wat die
+kolom betekent. Dat is opzet: neemt het model die voorraad over als `aantal`,
+dan leest het mijn prijslijst als hoeveelheidslijst, en dat is in productie een
+offerte van 90 meter plinten voor een klant die er 12 nodig heeft.
 
-Gaat T05 of T07 daarop onderuit, dan is dit mijn ene wijziging: één zin onder de
-lijst dat de voorraad over het magazijn gaat en niet over deze offerte. Ik zet
-die zin er nu niet in, want dan test ik of het model een regel kan volgen in
-plaats van of het de lijst begrijpt.
-
-**Resultaat.** Nog niet gedraaid. Run 1 staat hieronder zodra de vijf inputs
-door v2 zijn gegaan.
-
-| ID | v1 | v2 |
-|---|---|---|
-| T01 | F1, stil 35 m2 | |
-| T02 | niet gedraaid | |
-| T03 | niet gedraaid | |
-| T04 | niet gedraaid | |
-| T05 | niet gedraaid | |
-
-Succespercentage: nog niet te geven. v1 staat op 0 op 1 juist (n = 1, 1 run).
+Het trapte er in geen enkele run in. T07 gaf 0 en vroeg hoeveel meter, T05
+maakte geen post. De zin die ik klaar had liggen om dit op te lossen, blijft dus
+in de la.
 
 ## Week 2, v1: eerste versie
 

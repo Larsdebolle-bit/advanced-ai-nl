@@ -1,55 +1,51 @@
-# Week 3 — Vijf op vijf is een slecht cijfer
+# Week 3 — De fix die een nieuwe fout maakte
 
 ## Wat ontbrak er in mijn context?
 
 Ik liep de zes bouwstenen af op mijn prompt van vorige week en vond drie gaten:
-nul voorbeelden, geen enkele regel met een waarom, en een uitweg die wel een
-ontbrekende prijs dekte maar niet een tegenstrijdige maat.
-
-Die drie heb ik gedicht. Daarna kwam de buurtest, en die vond er acht meer. Geen
-van die acht is een ontbrekende bouwsteen. Het zijn regels die onderling niet
-kloppen. "Schat op Belgische richtprijzen", en nergens in mijn prompt staat een
-richtprijs. Bij eenheid forfait volgt uit mijn eigen regel dat het aantal 0 is,
-en dan staat die post op nul euro. En twee regels claimden dezelfde input met
-een tegengesteld antwoord.
-
-Dat is het verschil tussen een checklist en een lezer: een checklist vindt wat
-er niet staat, een lezer vindt wat er niet samen kan.
+nul voorbeelden, geen regel met een waarom, en een uitweg die een ontbrekende
+prijs dekte maar geen tegenstrijdige maat. Die drie heb ik gedicht. De buurtest vond er acht meer, en geen van die acht is
+een ontbrekende bouwsteen. Het zijn regels die onderling niet kloppen. "Schat op
+Belgische richtprijzen", en nergens stond een richtprijs. Bij eenheid forfait
+volgt uit mijn eigen regel dat het aantal 0 is, en dan staat die post op nul
+euro. Een checklist vindt wat er niet staat, een lezer vindt wat er niet samen
+kan.
 
 En vijf keer bleek mijn verwachte antwoord iets te eisen dat nergens in mijn
 prompt stond. De uren per m2 voor sloopwerk. Dat een container er altijd bij
-hoort. Wanneer het model mag afleiden en wanneer niet. Dat zat in mijn hoofd en
-nergens anders.
+hoort. Wanneer het model mag afleiden. Dat zat in mijn hoofd en nergens anders.
 
 ## Mijn eerste cijfer
 
-5 op 5 juist (n = 5, 1 run). Nul fouten in alle zes klassen.
+22 op 24 juist (n = 12, 2 runs). Eén echte fout, twee keer gemaakt: F2. En twee
+keer F6, wisselend antwoord. Die F6 is het interessantste. De posten waren in alle twaalf inputs bij beide
+runs identiek: zelfde aantallen, eenheden en bronlabels. Alleen het aantal vragen
+wisselde. Eén input stelde in run 1 een vraag en in run 2 geen, een andere eerst
+twee en dan drie over dezelfde onbekende. De harde uitvoer is stabiel, de zachte
+niet. Voor een offerte is dat de goede kant op, maar mijn eigen prompt zegt dat
+de aannemer vragen die hij al beantwoord heeft vanaf dan wegklikt.
 
-Dat is geen goed resultaat. Mijn inputs zijn tien woorden lang en testen elk één
-ding. Een echte werfopname duurt twee minuten en heeft vijf werken, drie maten
-en twee versprekingen door elkaar. Daar gaat het mis. En ik heb mijn prompt acht
-keer bijgesteld op precies deze gevallen, dus ik meet of ik mijn eigen regels
-goed opschreef, niet of mijn tool werkt.
-
-De enige echte fout was van mij. Bij de Franse opname verwachtte ik sloopwerk
-aan 12 uur, 750 euro. Het model nam tegels uitbreken aan 12 m2, 264 euro, en
-volgde daarmee correct een regel die ik zelf net had toegevoegd. Mijn antwoord
-was van voor die regel bestond. Factor drie in euro.
+Eén fout zat in mijn testset. Bij de Franse opname verwachtte ik sloopwerk aan
+12 uur, 750 euro. Het model nam tegels uitbreken aan 12 m2, 264 euro, en volgde
+daarmee correct een regel die ik zelf net had toegevoegd.
 
 ## Eén wijziging
 
-Hier kan ik niet leveren wat de opdracht vraagt, en dat is zelf een uitkomst.
-Ik had nul fouten, dus er was geen fout om mijn ene wijziging op te doen.
+De fout: bij "een ruimte schilderen en nadien de belichting regelen" maakte het
+model een tweede post, "Elektriciteit lichtpunt plaatsen", 415 euro. Die had
+niet mogen bestaan: van "de belichting regelen" weet je niet of het een punt,
+een armatuur of een hele kring is. Dat hoort een vraag te zijn.
 
-Mijn kandidaat lag klaar. In mijn materialenlijst staat een kolom voorraad en
-nergens staat wat die betekent. Neemt het model die 90 meter plinten over als
-aantal, dan leest het mijn prijslijst als hoeveelheidslijst, en dat is een
-offerte van 90 meter voor een klant die er 12 nodig heeft. Het trapte er niet
-in: het gaf 0 en vroeg hoeveel meter.
+Welke bouwsteen fout was: geen van de zes. Het was een botsing tussen een regel
+en de richtprijzenlijst die ik na de buurtest had toegevoegd. Daar staat
+"Elektriciteit per punt: 280 tot 550". Het model vond een prijs, en een prijs
+hebben voelde als toestemming om een post te maken. Die lijst was zelf een fix
+uit de buurtest. Een fix die een nieuwe fout maakt.
 
-Waarom dat geen bewijs is: bij één run kan ik F6, wisselend antwoord bij
-dezelfde input, per definitie niet zien, en dat is bij een taalmodel de klasse
-die het meest voorkomt. Vijf keer juist zegt alleen dat het vijf keer kon. Voor
-week 4 schrijf ik twee lange, rommelige opnames bij, draai ik alles een tweede
-keer, en kijk ik mijn tien antwoorden opnieuw na tegen de prompt zoals hij nu
-is.
+Mijn wijziging: één alinea onder de richtprijzen, dat een prijs vinden geen
+reden is om een post te maken. Twee keer opnieuw gedraaid, beide keren juist.
+
+Waarom dat geen bewijs is: twee runs op één input, en de andere elf heb ik niet
+opnieuw gedraaid. Ik mag dus niet zeggen dat de tool nu 24 op 24 haalt. Dat is
+hetzelfde probleem dat die richtprijzenlijst mij bezorgde, en de reden waarom ik
+voor week 4 alle twaalf opnieuw moet draaien.

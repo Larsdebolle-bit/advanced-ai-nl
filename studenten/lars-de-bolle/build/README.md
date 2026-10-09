@@ -9,10 +9,12 @@ Daaruit komt een concept-offerte in zijn eigen huisstijl.
 | Bestand | Inhoud |
 |---|---|
 | `taak.md` | De taak volgens de vijf regels van de cursus |
-| `prompt.md` | v2, de versie die nu draait |
-| `prompt-v1.md` | v1, bewaard om tegen af te zetten |
+| `prompt.md` | v3, de versie die nu draait |
+| `prompt-v2.md` | v2b, de versie waarop 19 van de 24 runs liepen |
+| `prompt-v1.md` | v1 uit week 2, bewaard om tegen af te zetten |
+| `materialenlijst.csv` | fictieve bibliotheek van tien regels, in elke run dezelfde |
 | `audit.md` | De zes bouwstenen tegen v1, en wat ontbrak |
-| `test-set.md` | Tien inputs met het juiste antwoord vooraf, en de runs |
+| `test-set.md` | Twaalf inputs met het juiste antwoord vooraf, en 24 runs |
 | `log.md` | Wat ik veranderde en wat ermee gebeurde |
 
 ## Hoe je een input draait

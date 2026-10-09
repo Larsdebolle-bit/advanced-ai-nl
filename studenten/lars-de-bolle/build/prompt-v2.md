@@ -1,4 +1,4 @@
-# v3: prompt (huidige versie, na de ene wijziging)
+# v2b: prompt (bewaard, de versie waarop 19 van de 24 runs liepen)
 
 Plak dit in een nieuw gesprek. Vervang de materialenlijst en de werfopname
 onderaan. Nooit de testset meegeven.
@@ -209,13 +209,6 @@ Container 10 m3: 300 tot 450 EUR/stuk
 
 Neem het midden van de reeks, tenzij de opname een reden geeft om hoger of lager
 te gaan. Want een reeks is geen prijs, en de aannemer moet één getal zien.
-
-Dat je hier een prijs vindt, is geen reden om een post te maken. Eerst beslis je
-of de post mag bestaan, dan pas zoek je de prijs. Staat "belichting regelen" in
-de opname, dan weet je niet of het een punt, een armatuur of een hele kring is:
-dan maak je geen post en stel je de vraag, ook al staat er een prijs per punt in
-deze lijst. Want een prijs uit deze lijst in een post die niet had mogen bestaan,
-is een bedrag dat de aannemer niet verwacht en niet terugvindt.
 
 MATERIALENLIJST
 Omschrijving | eenheid | eenheidsprijs | voorraad
