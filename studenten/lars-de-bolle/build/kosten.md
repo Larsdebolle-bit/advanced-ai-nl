@@ -18,8 +18,15 @@ posten, 13,5 m2, correctie en kraan op `open`, exact zoals vooraf opgeschreven.
 | **Totaal** | **134.500** |
 | Kost hele sessie | $0,09 |
 
-Model: Haiku 5.5. `/model haiku` geeft 5.5, terwijl de prijstabel van de cursus
-Haiku 4.5 vermeldt. Ik reken met de 4.5-prijzen en noteer dat als aanname.
+Model: Haiku 5.5, bevestigd met `/cost` op 21 oktober 2026.
+
+**Gecorrigeerd in week 5.** In week 4 rekende ik met de prijzen van Haiku 4.5
+($1 / $5 per miljoen), omdat de prijstabel van de cursus alleen die vermeldde.
+Het model was Haiku 5.5, en dat kost $0,10 / $0,50. Elk kostencijfer hieronder
+stond dus tien keer te hoog. De oude getallen blijven staan, met het juiste
+getal ernaast. Let ook op: `/cost` zelf rekent Haiku 5.5 aan de prijs van Opus,
+ongeveer veertig keer te veel. De getallen hieronder zijn met de hand gerekend
+uit de tokens, niet overgenomen uit `/cost`.
 
 ## Context tegenover jouw deel
 
@@ -44,8 +51,13 @@ deel.
 
 | Model | Input | Output | Kost per run | In euro |
 |---|---:|---:|---:|---:|
-| Haiku 4.5 ($1 / $5 per M) | 3.400 | 6.000 | $0,0334 | **€ 0,030** |
+| **Haiku 5.5 ($0,10 / $0,50 per M)** | 3.400 | 6.000 | $0,00334 | **€ 0,0030** |
+| Haiku 4.5 ($1 / $5 per M) | 3.400 | 6.000 | $0,0334 | € 0,030 |
 | GPT-6.1 Sol ($2 / $10 per M) | 3.400 | 6.000 | $0,0668 | € 0,060 |
+
+De eerste regel is de juiste: dat is het model dat echt draaide. De tweede is
+wat ik in week 4 opschreef, gecorrigeerd in week 5. Haiku 5.5 houdt die prijs
+tot 100.000 tokens per vraag; mijn zwaarste vraag was 70.000, dus ik zit eronder.
 
 Het zwaartepunt ligt bij de output: 6.000 tokens tegen 3.400 input, en output
 kost vijf keer meer per token. Van die 6.000 is de JSON zelf maar ongeveer 600.
@@ -53,24 +65,28 @@ De rest is denkwerk van het model dat je niet ziet en wel betaalt.
 
 ## Per maand
 
-| Volume per maand | Haiku 4.5 | GPT-6.1 Sol |
-|---:|---:|---:|
-| 8 | € 0,24 | € 0,48 |
-| 80 (10x) | € 2,40 | € 4,80 |
-| 8.000 (1.000x) | € 240 | € 480 |
+| Volume per maand | Haiku 5.5 | Haiku 4.5 (fout) | GPT-6.1 Sol |
+|---:|---:|---:|---:|
+| 8 | **€ 0,024** | € 0,24 | € 0,48 |
+| 80 (10x) | € 0,24 | € 2,40 | € 4,80 |
+| 8.000 (1.000x) | € 24 | € 240 | € 480 |
 
 Die 8 komt van 2 offertes per week, mijn eigen schatting voor een zelfstandige
 als Joeri. Niet geteld en niet aan hem gevraagd, dus het blijft een aanname. Op
-jaarbasis is dat 96 runs, ofwel € 2,88 aan tokens.
+jaarbasis is dat 96 runs, ofwel € 0,29 aan tokens (in week 4 schreef ik € 2,88,
+met de verkeerde prijs).
 
 Vanaf welk volume doet het bedrag ertoe? Bij Joeri nooit: 96 runs per jaar kost
-minder dan drie euro. Pas rond duizend keer dat volume, 8.000 runs per maand,
-wordt het een post op een begroting.
+dertig cent. Ook bij duizend keer dat volume, 8.000 runs per maand, blijft het
+€ 24. De conclusie van week 4 wordt door de correctie dus niet zwakker maar
+sterker: de tokenkost is in geen enkel scenario het probleem.
 
 ## De cache
 
-Beurt 1 schreef 70.000 tokens naar de cache, beurt 2 las er 58.500 terug. Lezen
-kost $0,10 per miljoen, schrijven $1,25. Dezelfde vraag twee keer na elkaar
+Beurt 1 schreef 70.000 tokens naar de cache, beurt 2 las er 58.500 terug. Bij
+Haiku 5.5 kost lezen $0,01 per miljoen en schrijven $0,125 tot $0,20. De hele
+sessie komt daarmee op ongeveer $0,012 in plaats van de $0,09 die ik in week 4
+noteerde. Dezelfde vraag twee keer na elkaar
 kost dus niet twee keer hetzelfde. Dat raakt mijn cijfer per run niet, want dat
 rekent alleen mijn deel.
 
