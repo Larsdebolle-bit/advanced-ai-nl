@@ -1,7 +1,7 @@
 # Kost per run uit het echte tokenverbruik. Prijs per miljoen tokens, 21-10-2026.
 import json, glob
 from collections import defaultdict
-PRIJS = {"gpt-4o": (2.50, 10.00, 1.25), "gpt-6-luna": (0.10, 0.50, 0.01)}  # in, uit, cache lezen
+PRIJS = {"gpt-4o": (2.50, 10.00, 1.25), "gpt-6-luna": (0.10, 0.50, 0.01), "gpt-4o-mini": (0.15, 0.60, 0.075)}  # in, uit, cache lezen
 agg = defaultdict(lambda: [0, 0, 0, 0, 0])
 for f in glob.glob("out/*.json"):
     d = json.load(open(f)); u = d["usage"]; a = agg[(d["model"], d["prompt"])]

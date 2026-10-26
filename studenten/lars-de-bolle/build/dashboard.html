@@ -45,18 +45,18 @@
 <body>
 <main>
   <h1>OpMaat werfopname: wat de cijfers zeggen</h1>
-  <p class="onder">Lars De Bolle &middot; Advanced AI for Business &middot; bijgewerkt 26 oktober 2026</p>
+  <p class="onder">Lars De Bolle &middot; Advanced AI for Business &middot; bijgewerkt 26 oktober 2026 &middot; 120 runs</p>
 
   <div class="cijfers">
     <div class="kaart">
       <div class="label">Score, beste opzet</div>
-      <div class="groot">11,5<span style="font-size:1rem;color:var(--zacht)"> / 12</span></div>
-      <div class="bij">GPT-6 Luna, prompt v3, 2 runs</div>
+      <div class="groot">11&ndash;12<span style="font-size:1rem;color:var(--zacht)"> / 12</span></div>
+      <div class="bij">GPT-6 Luna, prompt v3, 3 runs</div>
     </div>
     <div class="kaart">
       <div class="label">Foutmarge</div>
       <div class="groot">&plusmn; 1 punt</div>
-      <div class="bij">schommeling tussen runs, zelfde input</div>
+      <div class="bij">schommeling over 120 runs, zelfde input</div>
     </div>
     <div class="kaart">
       <div class="label">Kost per run</div>
@@ -72,13 +72,14 @@
 
   <h2>Model tegen model, zelfde prompt en zelfde 12 inputs</h2>
   <table>
-    <thead><tr><th>Model</th><th class="n">Run 1</th><th class="n">Run 2</th><th class="n">Kost / run</th><th>Fouten die vastliggen</th></tr></thead>
+    <thead><tr><th>Setup</th><th class="n">Scores per run</th><th class="n">Bereik</th><th class="n">Kost / run</th><th>Fouten die vastliggen</th></tr></thead>
     <tbody>
-      <tr><td>GPT-6 Luna</td><td class="n goed">11/12</td><td class="n goed">12/12</td><td class="n">&euro; 0,00034</td><td>geen</td></tr>
-      <tr><td>gpt-4o <span style="color:var(--zacht)">(draait in productie)</span></td><td class="n fout">8/12</td><td class="n fout">8/12</td><td class="n">&euro; 0,0054</td><td>T03, T05, T07, T11</td></tr>
+      <tr><td>GPT-6 Luna</td><td class="n goed">12, 11, 12</td><td class="n goed">11&ndash;12</td><td class="n">&euro; 0,00029</td><td>geen</td></tr>
+      <tr><td>gpt-4o <span style="color:var(--zacht)">(draait in productie)</span></td><td class="n fout">9, 8</td><td class="n fout">8&ndash;9</td><td class="n">&euro; 0,00530</td><td>T03, T05, T11</td></tr>
+      <tr><td>gpt-4o-mini <span style="color:var(--zacht)">(de controlelaag)</span></td><td class="n fout">6, 7</td><td class="n fout">6&ndash;7</td><td class="n">&euro; 0,00031</td><td>T02, T03, T05, T07, T11</td></tr>
     </tbody>
   </table>
-  <p class="uitleg">Het gat is 3,5 punten bij een foutmarge van 1. Dat is geen ruis. De vier fouten van gpt-4o komen in beide runs terug: twee ervan zetten een verzonnen getal in de offerte, en dat gaat stil door naar de klant.</p>
+  <p class="uitleg">Het gat is 3 tot 5 punten bij een foutmarge van 1. Dat is geen ruis. De fouten van beide OpenAI-modellen komen in elke run terug en zetten een getal in de offerte dat niemand heeft gezegd: 30 uur sloopwerk zonder maat, 25 m2 vloertegels zonder te vragen of het wand of vloer is. Prijs voorspelt hier niets: Luna en gpt-4o-mini kosten bijna evenveel en schelen 5 punten.</p>
 
   <h2>Waar de waarde zit, en waar niet</h2>
   <div class="balk">
@@ -91,8 +92,8 @@
       <tr><td>Tijd van Joeri, bovengrens</td><td class="n">&euro; 3.360</td><td>geschat, 18 min nakijken</td></tr>
       <tr><td>Tijd van Joeri, ondergrens</td><td class="n">&euro; 0</td><td>geschat, 35+ min nakijken</td></tr>
       <tr><td>Tokens, hele jaar</td><td class="n">&euro; 0,03</td><td>gemeten</td></tr>
-      <tr><td>Verschil tussen de twee modellen in tokens</td><td class="n">&euro; 0,49</td><td>gemeten</td></tr>
-      <tr><td>Verschil tussen de twee modellen in tijd</td><td class="n">&euro; 2.800</td><td>gevolg van de foutmarge</td></tr>
+      <tr><td>Verschil Luna tegen gpt-4o in tokens</td><td class="n">&euro; 0,48</td><td>gemeten</td></tr>
+      <tr><td>Verschil Luna tegen gpt-4o in tijd</td><td class="n">&euro; 2.800</td><td>gevolg van de foutmarge</td></tr>
     </tbody>
   </table>
   <p class="uitleg">De tokenkost is onzichtbaar klein: drie cent per jaar tegenover maximaal 3.360 euro aan tijd. Het model kiezen op prijs is hier zinloos. Het model kiezen op foutmarge is 2.800 euro waard, want de foutmarge bepaalt of Joeri de lijst vertrouwt of alles natelt.</p>
@@ -105,6 +106,7 @@
       <tr><td>Fouten van de productieprompt</td><td class="fout">niet getest, de app gebruikt een andere prompt</td></tr>
       <tr><td>Whisper per minuut opname</td><td class="fout">niet gemeten</td></tr>
       <tr><td>60 min met de hand</td><td class="fout">schatting, Joeri werkt in Excel</td></tr>
+      <tr><td>Claim van week 3: v3 beter dan v2</td><td class="fout">ingetrokken, v2 haalt 36/36 en v3 35/36</td></tr>
     </tbody>
   </table>
 
